@@ -92,7 +92,6 @@ class StackViewsRemoteFactory implements RemoteViewsService.RemoteViewsFactory {
         // and set the text based on the position.
         remoteViews.setTextViewText(R.id.widget_item_recipe_name, recipe.getName());
 
-        //Iterate through the ingredients
         String ingredients = "";
         for (Ingredients ingredient : recipe.getIngredients()) {
             ingredients += " - " + ingredient.getIngredient() + "\n";
