@@ -60,10 +60,10 @@ public class FragmentStepsDetailActivity  extends Fragment implements StepsAdapt
         Recepie recipeList = getActivity().getIntent().getParcelableExtra("items");
 
         ingredientsList = recipeList.getIngredients();
-        Log.i("tagu21", String.valueOf(recipeList.getIngredients()));
+        Log.i("tag1", String.valueOf(recipeList.getIngredients()));
         stepslist = recipeList.getSteps();
 
-        // Ingredients steps------------------------------------------------------
+        // Ingredients steps
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
         mRecyclerViewIngredient.setLayoutManager(manager);
         mRecyclerViewIngredient.setItemAnimator(new DefaultItemAnimator());
@@ -71,7 +71,7 @@ public class FragmentStepsDetailActivity  extends Fragment implements StepsAdapt
         mRecyclerViewIngredient.setAdapter(mIngredientsAdapter);
         mIngredientsAdapter.notifyDataSetChanged();
 
-        // Steps steps-------------------------------------------------------------
+        // Steps steps
         RecyclerView.LayoutManager manager2 = new LinearLayoutManager(getActivity());
         mRecyclerViewSteps.setLayoutManager(manager2);
         mRecyclerViewSteps.setItemAnimator(new DefaultItemAnimator());

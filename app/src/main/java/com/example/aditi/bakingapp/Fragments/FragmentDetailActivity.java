@@ -120,9 +120,7 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
 
 
                 index = getActivity().getIntent().getExtras().getInt("position");
-                Log.i("tagu", String.valueOf(index));
-
-                steps = stepList.get(index);
+                                steps = stepList.get(index);
                 String videoUrl = steps.getVideoURL();
                 setupVideoView(videoUrl);
 
@@ -139,7 +137,6 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
                     currentPosition = savedInstanceState.getLong("videoState");
                     stepList = getArguments().getParcelableArrayList("bundle");
                     index = getArguments().getInt("index");
-                    Log.i("fragu21", String.valueOf(index));
                     Steps steps = stepList.get(index);
                     String videoUrl = steps.getVideoURL();
                     if (videoUrl != null && !videoUrl.isEmpty()) {
@@ -163,12 +160,11 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
                 } else {
                     stepList = getArguments().getParcelableArrayList("bundle");
                     index = getArguments().getInt("index");
-                    Log.i("fragu21", String.valueOf(index));
                     Steps steps = stepList.get(index);
                     String videoUrl = steps.getVideoURL();
                     if (videoUrl != null && !videoUrl.isEmpty()) {
 
-                        // Init and show video view
+
                         setViewVisibility(playerView, true);
                         initializeMediaSession();
                         initializePlayer(Uri.parse(videoUrl));
@@ -180,7 +176,7 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
 
 
                     } else {
-                        // Hide video view
+
                         setViewVisibility(playerView, false);
                     }
 
@@ -229,11 +225,6 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
         String imageUrl = step.getThumbnailURL();
         setupImageView(imageUrl);
 
-       /* //getting video url
-        String videoUrl = step.getVideoURL();
-        setupVideoView(videoUrl);*/
-
-
     }
 
     private void setupVideoView(String videoUrl) {
@@ -273,9 +264,6 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
     }
 
 
-    /**
-     * Media session initialization
-     */
     private void initializeMediaSession() {
         mediaSession = new MediaSessionCompat(getActivity(), "RecipePageFragment");
 
@@ -389,7 +377,7 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
             index++;
 
             if (!btn_prev.isEnabled()) btn_prev.setEnabled(true);
-            Log.i("tagu", String.valueOf(index));
+
             steps = stepList.get(index);
             //exoPlayer.seekTo(0);
             releasePlayer();

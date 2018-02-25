@@ -72,11 +72,10 @@ public class FragmentMain extends Fragment implements AsyncListner, SwipeRefresh
             mRecyclerView.setLayoutManager(manager);
             mRecyclerView.setItemAnimator(new DefaultItemAnimator());
             url = NetworkUtils.buildURl();
-            //checking Internet connection-----------------------------------------------------
-
+            //checking Internet connection
 
             new MyAsyncTask(this).execute(url);
-            Log.i("tablu21", String.valueOf(MainActivity.isTablet));
+            Log.i("tab1", String.valueOf(MainActivity.isTablet));
         } else {
             Toast.makeText(getActivity(), "Check Your Internet Connection !!", Toast.LENGTH_SHORT).show();
         }

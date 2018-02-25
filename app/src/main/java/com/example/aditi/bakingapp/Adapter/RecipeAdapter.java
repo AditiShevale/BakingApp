@@ -25,8 +25,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
     final private ListItemClickListener mListItemClickListener;
 
 
-    //Interface
-
     public interface ListItemClickListener {
 
         void onListItemClick(Recepie recepie);
@@ -99,11 +97,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-           /* img = itemView.findViewById(R.id.imageView);
-            txt_id = itemView.findViewById(R.id.txt_id);
-            txt_name = itemView.findViewById(R.id.txt_name);
-            txt_serving = itemView.findViewById(R.id.txt_serving);*/
-
 
         }
 

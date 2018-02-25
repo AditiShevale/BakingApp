@@ -46,7 +46,7 @@ public class NetworkUtils {
         URL url = null;
         try {
             url = new URL(builtUri.toString());
-            Log.i("url21", String.valueOf(url));
+            Log.i("url1", String.valueOf(url));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -79,7 +79,7 @@ public class NetworkUtils {
         ArrayList<Recepie> recepies = new ArrayList<>();
 
 
-        //CONSTANTS for the JSON Objects
+        //CONSTANTS for the JSONObjects
         final String RECIPE_ID = "id";
         final String RECIPE_NAME = "name";
         final String RECIPE_INGREDIENTS = "ingredients";
@@ -103,7 +103,7 @@ public class NetworkUtils {
             String recipeName = recipeJsonObject.getString(RECIPE_NAME);
             String recipeServings = recipeJsonObject.getString((RECIPE_SERVINGS));
             String recipeImage = recipeJsonObject.getString(RECIPE_IMAGE);
-            Log.i("tagu21", recipeId + recipeName);
+            Log.i("tag1", recipeId + recipeName);
 
 
             ArrayList<Ingredients> ingredientList = new ArrayList<>();

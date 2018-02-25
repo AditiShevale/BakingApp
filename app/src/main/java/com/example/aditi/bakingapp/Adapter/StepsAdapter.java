@@ -24,8 +24,6 @@ public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.MyViewHolder
     final private ListItemClickListener mListItemClickListener;
 
 
-    //Interface
-
     public interface ListItemClickListener {
 
         void onListItemClick(int clickedItemIndex);
