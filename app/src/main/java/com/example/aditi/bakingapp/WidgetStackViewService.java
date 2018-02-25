@@ -86,13 +86,13 @@ class StackViewsRemoteFactory implements RemoteViewsService.RemoteViewsFactory {
         // Construct a remote views item based on the app widget item XML file,
         RemoteViews remoteViews = new RemoteViews(mContext.getPackageName(), R.layout.widget_list);
 
-        //Recipe Pojo Instence to get all the getters
+        //Recipe Pojo Instance to get all the getter
         Recepie recipe = mRecipes.get(position);
 
         // and set the text based on the position.
         remoteViews.setTextViewText(R.id.widget_item_recipe_name, recipe.getName());
 
-        //Iterate throught the ingredients
+        //Iterate through the ingredients
         String ingredients = "";
         for (Ingredients ingredient : recipe.getIngredients()) {
             ingredients += " - " + ingredient.getIngredient() + "\n";
@@ -109,7 +109,7 @@ class StackViewsRemoteFactory implements RemoteViewsService.RemoteViewsFactory {
         fillIntent.putExtras(extras);
         remoteViews.setOnClickFillInIntent(R.id.recipe_widget_item, fillIntent);
 
-        //return the remoteview;
+        //return the remoteView;
         return remoteViews;
     }
 
