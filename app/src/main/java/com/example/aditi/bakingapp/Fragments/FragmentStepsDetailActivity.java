@@ -28,13 +28,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by aditi on 25/2/18.
+ * Created by aditi on 21/2/18.
  */
 
 public class FragmentStepsDetailActivity  extends Fragment implements StepsAdapter.ListItemClickListener {
 
-
-    //BindingViewsWithButterKnif
 
     @BindView(R.id.ingredient_list)
     RecyclerView mRecyclerViewIngredient;
