@@ -175,7 +175,7 @@ class StackViewsRemoteFactory implements RemoteViewsService.RemoteViewsFactory {
 
             } catch (IOException e) {
                 // If the code didn't successfully get the Recipe data, there's no point in attemping
-                // to parse it.
+
                 Timber.d("IOException: " + e.getMessage());
             } finally {
                 if (urlConnection != null) {
