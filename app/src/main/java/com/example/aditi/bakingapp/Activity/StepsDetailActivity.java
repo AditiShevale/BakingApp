@@ -10,10 +10,6 @@ import com.example.aditi.bakingapp.Fragments.FragmentStepsDetailActivity;
 import com.example.aditi.bakingapp.MainActivity;
 import com.example.aditi.bakingapp.R;
 
-/**
- * Created by aditi on 25/2/18.
- */
-
 public class StepsDetailActivity extends AppCompatActivity {
 
 

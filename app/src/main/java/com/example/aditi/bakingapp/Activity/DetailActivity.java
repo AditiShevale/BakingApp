@@ -8,10 +8,6 @@ import com.example.aditi.bakingapp.Fragments.FragmentDetailActivity;
 import com.example.aditi.bakingapp.MainActivity;
 import com.example.aditi.bakingapp.R;
 
-/**
- * Created by aditi on 25/2/18.
- */
-
 public class DetailActivity extends AppCompatActivity {
 
 
@@ -19,9 +15,6 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps_detail);
-
-        // getActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         if (MainActivity.isTablet && (getSupportActionBar() != null)) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);

@@ -5,10 +5,6 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 
-/**
- * Created by aditi on 25/2/18.
- */
-
 public class Recepie implements Parcelable {
 
     private String id;

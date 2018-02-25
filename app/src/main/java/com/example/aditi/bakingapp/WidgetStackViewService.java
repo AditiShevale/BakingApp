@@ -23,9 +23,6 @@ import java.util.Arrays;
 
 import timber.log.Timber;
 
-/**
- * Created by aditi on 25/2/18.
- */
 
 public class WidgetStackViewService extends  RemoteViewsService {
     @Override

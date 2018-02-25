@@ -10,10 +10,6 @@ import org.json.JSONException;
 import java.net.URL;
 import java.util.ArrayList;
 
-/**
- * Created by aditi on 25/2/18.
- */
-
 public class MyAsyncTask  extends AsyncTask<URL, Void, ArrayList<Recepie>> {
 
     private AsyncListner mListner;

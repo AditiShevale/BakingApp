@@ -33,10 +33,6 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by aditi on 21/2/18.
- */
-
 public class FragmentMain extends Fragment implements AsyncListner, SwipeRefreshLayout.OnRefreshListener {
 
 

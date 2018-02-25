@@ -6,10 +6,6 @@ import android.os.Parcelable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by aditi on 21/2/18.
- */
-
 public class Ingredients implements Parcelable {
 
     private String quantity;

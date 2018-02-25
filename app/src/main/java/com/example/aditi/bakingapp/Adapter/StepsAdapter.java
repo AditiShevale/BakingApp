@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by aditi on 25/2/18.
- */
 
 public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.MyViewHolder> {
 

@@ -47,10 +47,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by aditi on 25/2/18.
- */
-
 public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventListener {
 
     int index;
