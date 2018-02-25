@@ -100,8 +100,6 @@ class StackViewsRemoteFactory implements RemoteViewsService.RemoteViewsFactory {
         //Set Ingredient text view from the ingredients
         remoteViews.setTextViewText(R.id.widget_item_ingredients, ingredients);
 
-        // Next, we set a fill-intent which will be used to fill-in the pending intent template
-        // which is set on the collection view in BakingWidgetProvider.
         Bundle extras = new Bundle();
         extras.putParcelable("recipe", recipe);
         Intent fillIntent = new Intent();
