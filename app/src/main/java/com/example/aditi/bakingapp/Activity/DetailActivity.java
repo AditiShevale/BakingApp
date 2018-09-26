@@ -16,6 +16,9 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps_detail);
 
+        // getActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         if (MainActivity.isTablet && (getSupportActionBar() != null)) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         } else {
@@ -35,3 +38,6 @@ public class DetailActivity extends AppCompatActivity {
 
     }
 }
+
+
+
