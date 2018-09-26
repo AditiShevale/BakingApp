@@ -56,7 +56,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         if (recepie.getImage().isEmpty())
 
         {
-            holder.img.setImageResource(R.drawable.front);
+            holder.img.setImageResource(R.mipmap.recipe);
 
         } else {
             Picasso.with(context)
@@ -68,7 +68,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         }
 
 
-        holder.img.setImageResource(R.drawable.ic_launcher_background);
+        holder.img.setImageResource(R.mipmap.recipe);
 
         holder.txt_name.setText(recepie.getName());
         holder.txt_serving.setText("Servings : " + recepie.getServings());

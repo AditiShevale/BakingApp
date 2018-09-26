@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+
 import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
@@ -47,7 +48,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventListener {
+public class FragmentDetailActivity extends Fragment implements
+        ExoPlayer.EventListener {
 
     int index;
     protected Steps steps;
@@ -120,7 +122,9 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
 
 
                 index = getActivity().getIntent().getExtras().getInt("position");
-                                steps = stepList.get(index);
+                Log.i("tagu", String.valueOf(index));
+
+                steps = stepList.get(index);
                 String videoUrl = steps.getVideoURL();
                 setupVideoView(videoUrl);
 
@@ -137,6 +141,32 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
                     currentPosition = savedInstanceState.getLong("videoState");
                     stepList = getArguments().getParcelableArrayList("bundle");
                     index = getArguments().getInt("index");
+                    Log.i("fragu21", String.valueOf(index));
+                    Steps steps = stepList.get(index);
+                    String videoUrl = steps.getVideoURL();
+                    if (videoUrl != null && !videoUrl.isEmpty()) {
+
+                        // Init and show video view
+                        setViewVisibility(playerView, true);
+                        initializeMediaSession();
+                        initializePlayer(Uri.parse(videoUrl));
+                        exoPlayer.getPlaybackState();
+                        exoPlayer.seekTo(currentPosition);
+                        txt_recipe_short.setPaintFlags(txt_recipe_short.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+
+                        setUpView(steps);
+
+
+                    } else {
+                        // Hide video view
+                        setViewVisibility(playerView, false);
+                    }
+
+                } else {
+                    stepList = getArguments().getParcelableArrayList("bundle");
+                    index = getArguments().getInt("index");
+                    Log.i("fragu21", String.valueOf(index));
                     Steps steps = stepList.get(index);
                     String videoUrl = steps.getVideoURL();
                     if (videoUrl != null && !videoUrl.isEmpty()) {
@@ -154,29 +184,6 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
 
                     } else {
                         // Hide video view
-                        setViewVisibility(playerView, false);
-                    }
-
-                } else {
-                    stepList = getArguments().getParcelableArrayList("bundle");
-                    index = getArguments().getInt("index");
-                    Steps steps = stepList.get(index);
-                    String videoUrl = steps.getVideoURL();
-                    if (videoUrl != null && !videoUrl.isEmpty()) {
-
-
-                        setViewVisibility(playerView, true);
-                        initializeMediaSession();
-                        initializePlayer(Uri.parse(videoUrl));
-                        exoPlayer.seekTo(currentPosition);
-                        txt_recipe_short.setPaintFlags(txt_recipe_short.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-
-
-                        setUpView(steps);
-
-
-                    } else {
-
                         setViewVisibility(playerView, false);
                     }
 
@@ -225,6 +232,11 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
         String imageUrl = step.getThumbnailURL();
         setupImageView(imageUrl);
 
+       /* //getting video url
+        String videoUrl = step.getVideoURL();
+        setupVideoView(videoUrl);*/
+
+
     }
 
     private void setupVideoView(String videoUrl) {
@@ -264,6 +276,9 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
     }
 
 
+    /**
+     * Media session initialization
+     */
     private void initializeMediaSession() {
         mediaSession = new MediaSessionCompat(getActivity(), "RecipePageFragment");
 
@@ -377,7 +392,7 @@ public class FragmentDetailActivity extends Fragment implements ExoPlayer.EventL
             index++;
 
             if (!btn_prev.isEnabled()) btn_prev.setEnabled(true);
-
+            Log.i("tagu", String.valueOf(index));
             steps = stepList.get(index);
             //exoPlayer.seekTo(0);
             releasePlayer();
