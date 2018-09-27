@@ -68,7 +68,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
         }
 
 
-        holder.img.setImageResource(R.mipmap.recipe);
+        holder.img.setImageResource(R.mipmap.recipe_di);
 
         holder.txt_name.setText(recepie.getName());
         holder.txt_serving.setText("Servings : " + recepie.getServings());
